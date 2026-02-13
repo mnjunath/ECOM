@@ -1,16 +1,191 @@
-# React + Vite
+# 🛒 Authentication-Based E-Commerce Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully responsive E-Commerce Dashboard built using **React**, **Redux Toolkit**, and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+This project demonstrates authentication flow, protected routes, session management, product listing with infinite scroll, cart functionality, and profile editing — all without a backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🔐 Authentication
+- User Registration
+- User Login
+- Protected Routes
+- 5-minute Session Management
+- Auto Logout on Session Expiry
+- Persistent Login using localStorage
 
-## Expanding the ESLint configuration
+### 🛍 Products
+- Fetches products from DummyJSON API
+- Infinite Scroll
+- Debounced Search
+- Loading State
+- Empty State Handling
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🛒 Cart
+- Add to Cart
+- Prevent Duplicate Items
+- Increase / Decrease Quantity
+- Remove Items
+- Dynamic Subtotal & Total Calculation
+- Empty Cart Handling
+
+### 👤 Profile
+- Edit Name
+- Edit Email
+- Edit Password
+- Updates Redux State & localStorage
+- Instant UI Update
+
+### 🎨 UI / UX
+- Fully Responsive (Mobile, Tablet, Desktop)
+- Clean Premium Minimal Design
+- Consistent Spacing & Typography
+- Toast Notifications for Feedback
+
+---
+
+## 🛠 Tech Stack
+
+- React (Vite)
+- Redux Toolkit
+- React Router DOM
+- Tailwind CSS
+- Axios
+- React Toastify
+- DummyJSON Public API
+
+---
+
+## 📂 Project Structure
+
+```
+
+src/
+├── app/
+│    └── store.js
+├── features/
+│    ├── auth/
+│    ├── cart/
+│    ├── products/
+│    └── ui/
+├── components/
+├── layouts/
+├── pages/
+├── services/
+└── utils/
+
+```
+
+---
+
+## 🔐 Authentication Flow
+
+1. User registers (data stored in localStorage).
+2. User logs in with email and password.
+3. On login:
+   - Session expiry is set for 5 minutes.
+   - User state saved in Redux.
+   - Session saved in localStorage.
+4. Protected routes restrict unauthorized access.
+5. Session auto-expires after 5 minutes.
+6. Auto logout + redirect to login.
+
+---
+
+## 📦 Product API
+
+Products are fetched from:
+
+```
+
+[https://dummyjson.com/products](https://dummyjson.com/products)
+
+````
+
+Features implemented:
+- Pagination using `limit` and `skip`
+- Infinite scroll with IntersectionObserver
+- Debounced search using `setTimeout`
+- Proper loading and error handling
+
+---
+
+## 🛒 Cart Logic
+
+- Cart state managed globally using Redux.
+- Duplicate items increase quantity instead of re-adding.
+- Cart total calculated dynamically.
+- Subtotal shown per item.
+- Remove functionality implemented.
+
+---
+
+## 👤 Profile Management
+
+- Editable user profile.
+- Updates Redux store.
+- Updates localStorage.
+- UI updates immediately without refresh.
+
+---
+
+## 🧠 Concepts Demonstrated
+
+- Global State Management (Redux Toolkit)
+- Protected Routing
+- Session Handling
+- Async Thunks
+- LocalStorage Persistence
+- Infinite Scrolling
+- Debounced Input Handling
+- Clean Folder Structure
+- Separation of Logic and UI
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone <your-repository-url>
+cd ecommerce-dashboard
+````
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+---
+
+## 📱 Responsive Design
+
+* Mobile-first layout
+* Grid-based product display
+* Clean spacing system
+* Minimal premium aesthetic
+
+---
+
+## 📌 Notes
+
+* No backend is used.
+* Authentication is simulated using localStorage.
+* Built as part of a frontend internship assignment.
+
+---
+
+## 👨‍💻 Author
+
+**Manjunath Reddy**
+Frontend Developer (React | Redux | Tailwind CSS)
